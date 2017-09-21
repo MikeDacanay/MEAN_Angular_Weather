@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ThreadService } from './thread/thread.service'
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SeattleComponent } from './seattle/seattle.component';
 import { SanJoseComponent } from './san-jose/san-jose.component';
@@ -22,9 +23,10 @@ import { ChicagoComponent } from './chicago/chicago.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ThreadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
